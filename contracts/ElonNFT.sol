@@ -11,8 +11,13 @@ contract ElonNFT is ERC721URIStorage {
    using Counters for Counters.Counter;
    Counters.Counter private _tokenIds;
  
-   constructor(string memory name, string memory symbol) ERC721("ElonMusk", "ELON") {}
- 
+   constructor(string memory name, string memory symbol) ERC721("ElonMusk", "ELON") {
+       console.log("The NFT name :",name);
+       console.log("Symbol :",symbol);
+       console.log("Owner :",msg.sender);
+
+   }
+    
    function mintNFT() public returns (uint256)
     {
         _tokenIds.increment();
