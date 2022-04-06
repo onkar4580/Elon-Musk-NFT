@@ -3,12 +3,12 @@ const hre = require("hardhat");
 async function main() {
   // We get the contract to deploy
   const ElonNFT = await hre.ethers.getContractFactory("ElonNFT");
-  const elon = await ElonNFT.deploy();
+  const ElonNFTDeployed = await ElonNFT.deploy("ElonMusk","ELON");
 
-  await elon.deployed();
-  console.log("ElonNFT deployed to:", elon.address);
+  await ElonNFTDeployed.deployed();
+  console.log("ElonNFT deployed to:", ElonNFTDeployed.address);
   
-  let txn = await elon.mintNFT();
+  let txn = await ElonNFTDeployed.mintNFT();
   await txn.wait();
   
 }
