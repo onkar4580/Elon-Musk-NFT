@@ -12,7 +12,7 @@
      rinkeby: {
        url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_API_KEY}`,
        accounts: [`0x${RINKEBY_PRIVATE_KEY}`],
-       gasPrice: 8000000000,
+       gasPrice: 3000000,
      },
    },
  };;
